@@ -83,31 +83,31 @@ const Form: React.FC<FormProps> = ({
       {hasNome &&
         <label>
           Nome:
-              <input required type="text" name="nome" value={nome} onChange={handleNameChange} />
+          <input required type="text" name="nome" value={nome} onChange={handleNameChange} />
         </label>
       }
       {hasCpf &&
         <label>
-          CPF:
-                <input required type="number" name="cpf" value={cpf} onChange={handleCpfChange} />
+          CPF: 
+          <input required type="number" name="cpf" value={cpf} onChange={handleCpfChange} />
         </label>
       }
       {hasPedido &&
         <label>
-          Nro do Pedido:
-                <input required type="number" name="nroP" value={pedido} onChange={handlePedidoChange} />
+          Nro do Pedido: 
+          <input required type="number" name="nroP" value={pedido} onChange={handlePedidoChange} />
         </label>
       }
       {hasData &&
         <label>
-          Data:
-                <input required type="date" name="data" value={data} onChange={handleDataChange} />
+          Data: 
+          <input required type="date" name="data" value={data} onChange={handleDataChange} />
         </label>
       }
       {hasHora &&
         <label>
-          Hora:
-                <input required type="time" name="data" value={hora} onChange={handleHoraChange} />
+          Hora: 
+          <input required type="time" name="data" value={hora} onChange={handleHoraChange} />
         </label>
       }
       <input className="form__button" type="submit" value="Enviar" />
@@ -115,7 +115,7 @@ const Form: React.FC<FormProps> = ({
   )
 
   const renderControlButton = (): JSX.Element => (
-    <button onClick={handleShowing}>Realizar essa consulta</button>
+    <button className="selectQuery__button" onClick={handleShowing}>Realizar essa consulta</button>
   )
 
   return (

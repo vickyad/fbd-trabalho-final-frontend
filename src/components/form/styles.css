@@ -2,7 +2,47 @@
     margin: 15px;
 }
 
+input {
+    border: 2px solid  #c7c7c7;
+    border-radius: 4px;
+}
+
+input:focus {
+    border-color: #797979;
+}
+
+label {
+    display: block;
+    padding: 15px
+}
+
 .form__button {
-    background-color: blue;
-    border: 0;
+    background-color: #a578ca; /* Green */
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.form__button:hover {
+    background-color: #dab7f7; /* Green */
+}
+
+.selectQuery__button {
+    background-color: #e2cf28; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.selectQuery__button:hover {
+    background-color: #eee592; /* Green */
 }
