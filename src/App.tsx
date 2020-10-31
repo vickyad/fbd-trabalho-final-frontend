@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import logo from './images/logo.png'
-import Form, { FormData } from './components/Form'
+import Form, { FormData } from './components/form/Form'
 import QueryService from './services/QueryService'
 
 export default function App() {
@@ -99,8 +99,8 @@ export default function App() {
         <p>12 - Entregas feitas por um determinado entregador</p>
         <Form hasCpf onSubmit={handleEntregasPorEntregador}/>
 
-        <p>13 - Horarios disponí­veis de um determinado funcionário</p>
-        <Form hasCpf onSubmit={handleHorariosDisponiveis}/>
+        <p>13 - Funcionários disponí­veis em um determinado horário</p>
+        <Form hasData hasHora onSubmit={handleHorariosDisponiveis}/>
       </main>
     </div>
   );

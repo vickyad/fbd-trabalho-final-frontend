@@ -1,4 +1,4 @@
-import { FormData } from '../components/Form'
+import { FormData } from '../components/form/Form'
 import superagent from 'superagent'
 
 class QueryService {
@@ -30,7 +30,7 @@ class QueryService {
     getAvailableStaff = async (data: FormData) => {
         try {
             const res = await superagent.get(this.BASE_URL + 'available_staff/').query({
-                dateTime: data.data + 'T' + data.hora + '.000-03:00'
+                dateTime: data.data + 'T' + data.hora + ':00.000-03:00'
             })
             console.log(res)
         } catch (err) {

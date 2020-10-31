@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './styles.css'
 
 interface FormProps {
   onSubmit: (data: FormData) => void
@@ -109,7 +110,7 @@ const Form: React.FC<FormProps> = ({
                 <input required type="time" name="data" value={hora} onChange={handleHoraChange} />
         </label>
       }
-      <input type="submit" value="Enviar" />
+      <input className="form__button" type="submit" value="Enviar" />
     </form>
   )
 
@@ -117,7 +118,11 @@ const Form: React.FC<FormProps> = ({
     <button onClick={handleShowing}>Realizar essa consulta</button>
   )
 
-  return showing ? renderForm() : renderControlButton()
+  return (
+    <div className="form">
+      {showing ? renderForm() : renderControlButton()}
+    </div>
+  )
 }
 
 export default Form
