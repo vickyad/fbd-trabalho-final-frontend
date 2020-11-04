@@ -3,11 +3,11 @@ import './styles.css'
 
 interface FormProps {
   onSubmit: (data: FormData) => void
-  hasNome?: boolean
-  hasCpf?: boolean
-  hasPedido?: boolean
-  hasData?: boolean
-  hasHora?: boolean
+  nomeLabel?: string
+  cpfLabel?: string
+  pedidoLabel?: string
+  dataLabel?: string
+  horaLabel?: string
 }
 
 export interface FormData {
@@ -20,11 +20,11 @@ export interface FormData {
 
 const Form: React.FC<FormProps> = ({
   onSubmit,
-  hasCpf,
-  hasData,
-  hasNome,
-  hasPedido,
-  hasHora
+  cpfLabel,
+  horaLabel,
+  dataLabel,
+  nomeLabel,
+  pedidoLabel
 }) => {
   const [showing, setShowing] = useState<boolean>(false)
   const [nome, setNome] = useState<string | undefined>()
@@ -53,8 +53,11 @@ const Form: React.FC<FormProps> = ({
     setHora(event.target.value)
   }
 
+  const handleCancel = () => {
+    setShowing(false)
+  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
     onSubmit({
       cpf: cpf,
       data: data,
@@ -80,36 +83,37 @@ const Form: React.FC<FormProps> = ({
 
   const renderForm = (): JSX.Element => (
     <form onSubmit={handleSubmit}>
-      {hasNome &&
+      {nomeLabel &&
         <label>
-          Nome:
-          <input required type="text" name="nome" value={nome} onChange={handleNameChange} />
+        {nomeLabel}
+          <input required type="text" name={nomeLabel} value={nome} onChange={handleNameChange} />
         </label>
       }
-      {hasCpf &&
+      {cpfLabel &&
         <label>
-          CPF: 
-          <input required type="number" name="cpf" value={cpf} onChange={handleCpfChange} />
+        {cpfLabel} 
+          <input required type="number" name={cpfLabel} value={cpf} onChange={handleCpfChange} />
         </label>
       }
-      {hasPedido &&
+      {pedidoLabel &&
         <label>
-          Nro do Pedido: 
-          <input required type="number" name="nroP" value={pedido} onChange={handlePedidoChange} />
+        {pedidoLabel}
+          <input required type="number" name={pedidoLabel} value={pedido} onChange={handlePedidoChange} />
         </label>
       }
-      {hasData &&
+      {dataLabel &&
         <label>
-          Data: 
-          <input required type="date" name="data" value={data} onChange={handleDataChange} />
+        {dataLabel} 
+          <input required type="date" name={dataLabel} value={data} onChange={handleDataChange} />
         </label>
       }
-      {hasHora &&
+      {horaLabel &&
         <label>
-          Hora: 
-          <input required type="time" name="data" value={hora} onChange={handleHoraChange} />
+        {horaLabel}
+          <input required type="time" name={horaLabel} value={hora} onChange={handleHoraChange} />
         </label>
       }
+      <button className="form__button close" onClick={handleCancel}>Cancelar</button>
       <input className="form__button" type="submit" value="Enviar" />
     </form>
   )

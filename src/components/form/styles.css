@@ -17,7 +17,7 @@ label {
 }
 
 .form__button {
-    background-color: #a578ca; /* Green */
+    background-color: #a578ca;
     border: none;
     color: white;
     padding: 5px;
@@ -25,6 +25,15 @@ label {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+}
+
+.form__button.close {
+    background-color: #ff574d;
+    margin-right: 5px;
+}
+
+.form__button.close:hover {
+    background-color: #ffa5a0;
 }
 
 .form__button:hover {

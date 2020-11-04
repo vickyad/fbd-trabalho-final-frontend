@@ -1,0 +1,7 @@
+.table {
+    min-width: 80%;
+    max-width: 95%;
+}
+.table, .table th, .table td {
+    border: 1px solid black;
+}
