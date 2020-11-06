@@ -10,7 +10,7 @@ class QueryService {
                 nomePet: data.nome,
                 cpf: data.cpf
             })
-            return res.body
+            return [res.body]
         } catch (err) {
             console.error(err)
         }
@@ -71,7 +71,7 @@ class QueryService {
                 date: data.data,
                 cpf: data.cpf
             })
-            return res.body
+            return [res.body]
         } catch (err) {
             console.error(err)
         }
